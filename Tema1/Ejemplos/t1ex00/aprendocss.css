@@ -1,0 +1,18 @@
+p {
+    font-size: 2em;
+    color: blue;
+}
+
+#cabeceira {
+    font-size: 4em;
+    color: peru;
+}
+
+.cadro {
+    border: 1px solid red ;
+}
+
+.cadro-amarelo {
+    border: 1px solid rgb(255, 0, 0);
+    background-color: yellow;
+}
