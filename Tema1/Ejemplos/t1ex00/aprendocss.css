@@ -1,3 +1,10 @@
+/* Reset basico para mellorar a compatibilidade*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 p {
     font-size: 2em;
     color: blue;
@@ -15,4 +22,31 @@ p {
 .cadro-amarelo {
     border: 1px solid rgb(255, 0, 0);
     background-color: yellow;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caixa {
+ background-color: rgba(53, 184, 41, 0.7);
+ border: 10px solid black;
+ height: 300px;
+ width: 300px;
+ box-shadow: 2px 3px 6px green;
+}
+
+.caixa p {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.caixa h2 {
+    color: rgb(0, 0, 0);
+    
+}
+
+.caixa:hover {
+    background-color: rgb(0, 255, 0);
 }
