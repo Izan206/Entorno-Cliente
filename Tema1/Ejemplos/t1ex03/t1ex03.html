@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="t1ex03.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario de rexistro</h1>
+    <form action="#" method="post">
+
+        <label for="nome">Nome Completo: </label><br>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Izan Álvarez..." required><br><br>
+
+        <label for="email">Correo Electronico: </label><br>
+        <input type="email" id="email" name="email" placeholder="abc@gmail.com" required><br><br>
+
+        <label for="contrasinal">Contraseña: </label><br>
+        <input type="password" id="contrasinal" name="contrasinal" pattern=".{-6,}" required><br><br>
+
+        <label for="data">Fecha de Nacimiento</label><br>
+        <input type="date" id="data" nome="data" required><br><br>
+
+        <label for="xenero">Genero: </label><br>
+        <input type="radio" id="femenino" name="xenero" value="femenino">
+        <label for="femenino">Femenino</label><br>
+        <input type="radio" id="masculino" name="xenero" value="masculino">
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="outro" name="xenero" value="outro">
+        <label for="outro">Outro</label><br><br>
+
+        <label for="preferencias">Preferencias</label><br>
+        <input type="checkbox" id="novas" name="preferencias" value="novas">
+        <label for="novas">Recibir novas por correo</label><br>
+        <input type="checkbox" id="publicidade" name="preferencias" value="publicidade">
+        <label for="publicidade">Recibir publicidade por correo</label><br><br>
+
+        <label for="pais">Pais</label><br>
+        <select name="pais" id="pais" required>
+            <option value="">Selecciona una opcion</option>
+            <option value="es">España</option>
+            <option value="pt">Portugal</option>
+            <option value="br">Brasil</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Rexistrarse">
+    </form>
+</body>
+</html>

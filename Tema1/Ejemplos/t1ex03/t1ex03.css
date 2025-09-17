@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: rgb(16, 16, 141);
+}
+
+form {
+    gap: 10px;
+    width: 300px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px solid;
+}

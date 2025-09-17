@@ -8,12 +8,13 @@
     background-color: rgb(186, 187, 187);
     display: flex;
     height: 20vh;
-    flex-direction: row-reverse;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-flow: row;
     flex-wrap: row wrap;
     margin-bottom: 20px;
-    align-items: center;
-
+    gap: 20px;
+    align-content: space-around;
 }
 
 .objeto {
@@ -28,4 +29,15 @@
 .grande {
     font-size: 250%;
     order: -1;
+    align-self: flex-end;
+}
+
+.mediano {
+    font-size: 150%;
+}
+
+.pequeño {
+    font-size: 15px;
+    border: 2px solid red;
+    flex-shrink: 1;
 }
