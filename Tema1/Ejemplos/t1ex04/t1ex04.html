@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="t1ex03.css">
     <title>Formulario</title>
 </head>
 <body>
-    <h1>Formulario de rexistro</h1>
+    <h1 class="titulo">Formulario de Registro 2</h1>
     <form action="#" method="post">
 
         <label for="nome">Nome Completo</label><br>
@@ -22,19 +21,13 @@
         <label for="data">Fecha de Nacimiento</label><br>
         <input type="date" id="data" class="info" nome="data" required><br><br>
 
-        <label for="xenero">Genero</label><br>
-        <input type="radio" id="femenino" name="xenero" value="femenino">
-        <label for="femenino">Femenino</label><br>
-        <input type="radio" id="masculino" name="xenero" value="masculino">
-        <label for="masculino">Masculino</label><br>
-        <input type="radio" id="outro" name="xenero" value="outro">
-        <label for="outro">Outro</label><br><br>
+        <fieldset>
+            <legend>Xenero</legend>
+        </fieldset><br>
 
-        <label for="preferencias">Preferencias</label><br>
-        <input type="checkbox" id="novas" name="preferencias" value="novas">
-        <label for="novas">Recibir novas por correo</label><br>
-        <input type="checkbox" id="publicidade" name="preferencias" value="publicidade">
-        <label for="publicidade">Recibir publicidade por correo</label><br><br>
+        <fieldset>
+            <legend>Publicidade</legend>
+        </fieldset><br>
 
         <label for="pais">Pais</label><br>
         <select name="pais" id="pais" class="info" required>
@@ -45,6 +38,5 @@
         </select>
         <br><br>
         <input class="info button" type="submit" value="Rexistrarse">
-    </form>
 </body>
 </html>

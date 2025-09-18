@@ -10,20 +10,50 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
+    color: rgb(28, 28, 153);
     text-align: center;
     margin-top: 80px;
     margin-bottom: 50px;
-    color: rgb(16, 16, 141);
 }
 
 form {
-    gap: 10px;
-    width: 300px;
+    gap: 15px;
+    width: 450px;
     background-color: white;
-    padding: 15px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.info {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: rgb(58, 58, 212);
+    color: white;
+    padding: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: blue;
+    transition: 1s ease-in-out;
 }
