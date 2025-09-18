@@ -7,12 +7,15 @@
 body {
     background-color: rgb(240, 240, 240);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 80px;
+    margin-bottom: 50px;
     color: rgb(16, 16, 141);
 }
 
@@ -21,5 +24,6 @@ form {
     width: 300px;
     background-color: white;
     padding: 15px;
-    border-radius: 5px solid;
+    border-radius: 8px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
 }
