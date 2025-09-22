@@ -1,0 +1,19 @@
+body {
+
+}
+
+.contenedor {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tarxeta {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
