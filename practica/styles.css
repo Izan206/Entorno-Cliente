@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-image: url(background-image.png);
+    background-color: white;
+    height: 100%;
+}
+
+.contenedor {
+    display: flex;
+    justify-content:flex-end;
+    height: 100px;
+}
+
+.navegador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    margin-right: 50px;
+}
+
+.navegador a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 50px;
+    box-shadow: 0 0 20px;
+    width: 350px;
+    padding: 15px 15px;
+    border-radius: 250px;
+}
+
+
+.barra-busqueda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.barra-busqueda input {
+    height: 50px;
+    width: 1000px;
+    border-radius: 100px;
+    box-shadow: 0 0 50px rgba(170, 170, 170, 0.6);
+    padding: 20px;
+    border: none;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 50px;
+}
+
+.boton1 {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.boton1 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+.boton1 img {
+    border-radius: 50%;
+    height: 50px;
+    margin-bottom: 8px;
+}
+.boton1 p {
+    color: white;
+}
+
+.boton1:hover {
+    opacity: 0.7;
+}
+
+.boton2 {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 70%;
+}
+
+.boton2 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+.boton2 img {
+    border-radius: 50%;
+    height: 50px;
+    margin-bottom: 8px;
+}
+.boton2 p {
+    color: white;
+}
+
+.boton2:hover {
+    opacity: 0.7;
+}
+
+.boton3 {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 70%;
+}
+
+.boton3 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+.boton3 img {
+    border-radius: 50%;
+    height: 50px;
+    margin-bottom: 8px;
+}
+.boton3 p {
+    color: white;
+}
+
+.boton3:hover {
+    opacity: 0.7;
+}
