@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: rgb(60, 31, 103);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+
+.novas {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.novas article {
+    position: relative;
+    background-color: rgb(237, 219, 255);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 95%;
+    border-left: 5px solid rgb(8, 0, 255);
+    border-radius: 7px;
+}
+
+.novas article a {
+    color: rgb(0, 123, 255);
+    text-decoration: none;
+}
+
+.novas article a:hover  {
+    text-decoration: underline;
+}
+
+.novas article::before {
+    position: absolute;
+    content: "📰";
+    left: -2rem;
+    top: 1rem;
+    font-size: 1.5rem;
+
+
+}
+
+.novas article:first-child {
+    border-left-color: red;
+    background-color: #ffe0e0;
+}
+
+.novas article:nth-child(2) {
+    border-left-color: green;
+    background-color: #e0ffe0;
+}
+
+.novas article:last-child {
+    border-left-color: blue;
+    background-color: #e0e0ff;
+}
+
+
+.menu {
+    margin-top: 2rem;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    gap: 15px;
+}
+
+.menu a {
+    color: rgb(74, 74, 74);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.menu a:hover,
+.menu a:focus {
+    text-decoration: underline;
+    background-color: #e0e0ff;
+    border-radius: 4px;
+}
+
+
+.menu a:active {
+    background-color: #a5a5b9;
+}
+.menu a::after {
+    content: " ->";
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(60, 31, 103);
+    height: 60px;
+    color: white;
+    font-weight: bold;
+    margin-top: 80px;
+}

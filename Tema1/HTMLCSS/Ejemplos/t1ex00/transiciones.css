@@ -1,0 +1,91 @@
+div {
+  background-color: #9999ff;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  display: inline-block;
+  font-size: 8pt;
+  text-align: center;
+}
+#caixa1:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+#caixa2:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+#caixa3:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+}
+#caixa4:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+#caixa5:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+#caixa6:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
+}
+#caixa7:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: steps(5, jump-start);
+}
+#caixa8:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: steps(5, jump-end);
+}
+#caixa9:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: steps(5, jump-none);
+}
+#caixa10:hover {
+  background-color: #3333cc;
+  height: 200px;
+  transition-duration: 1s;
+  transition-timing-function: steps(5, jump-both);
+}
+
+#caixa11 {
+  border: 5px solid aquamarine;
+  /*background-color: #3333cc;
+  border-color: red;
+  margin-top: 250px;
+  margin-left: 400px;
+  opacity: 0.7;
+  transform: rotate(30deg);*/
+
+  transition: background-color 2s linear 500ms, border-color 1s ease-in 2.5s,
+    margin-top 3s steps(8, jump-none) 3.5s,
+    transform 1.5s cubic-bezier(0.2, -2, 0.8, 2) 6.5s, opacity 2s ease-out 8s,
+    margin-left 4s ease-in-out 6s;
+}
+
+#caixa11:hover {
+  background-color: blueviolet;
+  border: 3px solid red;
+  transform: scale(3);
+  opacity: 0.1;
+}

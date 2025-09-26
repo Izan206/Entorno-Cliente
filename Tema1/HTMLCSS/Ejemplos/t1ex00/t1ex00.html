@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Lenguaje (ingles, castellano...)-->
+<head>
+    <meta charset="UTF-8"> <!-- Compatibilidad idiomas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Pantalla para moviles -->
+    <link rel="stylesheet" href="t1ex00.css">
+    <title>Exemplos iniciais e Emmet</title>
+</head>
+<body>
+    <h1>Titulo nivel 1</h1>
+    <div class="contedor"></div>
+    <article class="contedor articulo"></article>
+    <article class="contedor" id="cont1">
+        <a href="fernandowirtz.com">
+            <ul>
+                <li>elemento</li>
+                <li>elemento</li>
+                <li>elemento</li>
+                <li>elemento</li>
+                <li>elemento</li>
+                <li>elemento</li>
+                <li>elemento</li>
+            </ul>
+        </a>
+    </article>
+    <section class="seccion1"> <!-- section.seccion1>article*2>p{Texto inventado $$}*3 -->
+        <article>
+            <p>Texto inventado 01</p>
+            <p>Texto inventado 02</p>
+            <p>Texto inventado 03</p>
+        </article>
+        <article>
+            <p>Texto inventado 01</p>
+            <p>Texto inventado 02</p>
+            <p>Texto inventado 03</p>
+        </article>
+    </section>
+    
+    <section class="seccion1"> <!-- section.seccion1>h1+article*2>p{Texto inventado $$}*3 -->
+        <h1></h1>
+        <article>
+            <p>Texto inventado 01</p>
+            <p>Texto inventado 02</p>
+            <p>Texto inventado 03</p>
+        </article>
+        <article>
+            <p>Texto inventado 01</p>
+            <p>Texto inventado 02</p>
+            <p>Texto inventado 03</p>
+        </article>
+    </section>
+
+    <div></div> <!-- div+div>p>span+em^bq -->
+    <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+    </div>
+
+    <p class="class1 class2 class3"></p> <!-- Para que una p pertenezca a varias clases p.class1.class2.class3 -->
+</body>
+</html>
