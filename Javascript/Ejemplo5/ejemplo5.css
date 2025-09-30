@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    background-color: rgb(220, 236, 245);
+    background-color: rgb(239, 245, 220);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 350px;
     width: 350px;
@@ -42,17 +42,60 @@ h1 {
     width: 90%;
     text-align: center;
     height: 30px;
+    margin-bottom: 15px;
 }
 
 
 #boton-entrada {
-    width: 90%;
-    background-color: rgb(0, 149, 255);
-    color: white;
+    width: 80%;
+    background-color: rgb(242, 255, 0);
+    color: rgb(0, 0, 0);
     height: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+#boton-entrada:hover {
+    background-color: rgb(163, 172, 4);
+}
+
+#boton-entrada:active {
+    color: black;
+    background-color: white;
 }
 
 .container:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    background-color:rgb(243, 255, 110);
+    box-shadow: 0 0 20px rgb(66, 72, 3);
+}
+
+.area-resultado {
+    height: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 50px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.area-resultado p {
+    font-size: 13px;
+}
+
+.area-resultado .error {
+    color: red;
+    font-weight: bold;
+}
+
+.area-resultado .acierto {
+    color: rgb(43, 255, 0);
+    font-weight: bold;
+}
+
+.area-resultado .fallo {
+    color: coral;
+    font-weight: bold;
 }
