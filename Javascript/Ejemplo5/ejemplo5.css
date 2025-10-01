@@ -23,12 +23,14 @@ body {
     justify-content: center;
     margin-top: 250px;
     transition: 0.5s ease-in-out;
+    border-radius: 10px;
 }
 
 h1 {
     font-size: 30px;
     margin-bottom: 10px;
 }
+
 .area-xogo {
     width: 100%;
     display: flex;
@@ -85,17 +87,3 @@ h1 {
     font-size: 13px;
 }
 
-.area-resultado .error {
-    color: red;
-    font-weight: bold;
-}
-
-.area-resultado .acierto {
-    color: rgb(43, 255, 0);
-    font-weight: bold;
-}
-
-.area-resultado .fallo {
-    color: coral;
-    font-weight: bold;
-}

@@ -1,24 +1,34 @@
-const numero = Math.floor(Math.random() * 100) + 1;
-let intentos=0;
+const numero=Math.floor(Math.random()*100)+1
+let intentos=0
 
 
 function comprobarSuposicion() {
-    const xogada=Number(document.getElementById("xogada").value);
-    const mensaxe=document.getElementById("mensaxe");
-
-    intentos++;
-    mensaxe.className=""
-    if (xogada<1 || xogada>100) {
-        mensaxe.textContent="O numero ten que estar entre 1 e 100";
-        mensaxe.classList.add("error");
-    } else if (xogada==numero) {
-        mensaxe.textContent=`Felicidades! O numero era ${numero} e has acertado en ${intentos} intento(s)`
-        mensaxe.classList.add("acierto");
-    } else if (xogada>numero) {
-        mensaxe.textContent=`O numero e maior, levas ${intentos} intento(s)`
-        mensaxe.classList.add("fallo");
-    } else {
-        mensaxe.textContent=`O numero e menor, levas ${intentos} intento(s)`
-        mensaxe.classList.add("fallo");
+    const xogada=Number(document.getElementById("xogada").value)
+    let mensaxe=document.getElementById("mensaxe")
+    let mensaxeIntentos=document.getElementById("intentos")
+    intentos++
+    if(xogada<1 || xogada>100 || isNaN(xogada)) {
+        mensaxe.textContent=`Error: Caracter invalido o error numero`
+        return;
     }
+    else if (xogada<numero){
+        mensaxe.textContent=`El numero que buscas es mayor`
+        mensaxeIntentos.textContent=`Llevas ${intentos} intentos`
+        
+    } 
+    else if (xogada>numero) {
+        mensaxe.textContent=`El numero que buscas es menor`
+        mensaxeIntentos.textContent=`Llevas ${intentos} intentos`
+        
+    }
+
+    else if(xogada==numero) {
+        mensaxe.textContent=`Has acertado`
+        mensaxe.style.color=`#28a745`
+        mensaxeIntentos.textContent=`Tardaste ${intentos} intentos`
+        
+    }
+
+    xogada.valueOf=``;
+    xogada.focus();
 }
