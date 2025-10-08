@@ -17,15 +17,15 @@
                     <input type="date" name="data" id="data">
 
                     <label for="dia-semana">Dia da Semana Deseado: </label>
-                    <select name="dia-semana" required>
-                        <option value=""></option>
+                    <select id="dia-semana" required>
+                        <option value="">Selecciona un dia</option>
                         <option value="1">Luns</option>
                         <option value="2">Martes</option>
                         <option value="3">Mercores</option>
                         <option value="4">Xoves</option>
                         <option value="5">Venres</option>
                         <option value="6">Sabado</option>
-                        <option value="7">Domingo</option>
+                        <option value="0">Domingo</option>
                     </select>
 
                     <button onclick="calcularAniversario()">Calcular Próximo Aniversario</button>
@@ -36,6 +36,6 @@
             </div>
         </div>
     </main>
-    <script src="index.html"></script>
+    <script src="script.js"></script>
 </body>
 </html>
