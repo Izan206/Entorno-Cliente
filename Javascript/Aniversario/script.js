@@ -11,6 +11,22 @@ const diasGL = [
   "Venres",
   "Sabado",
 ];
+
+const mesesGL = [
+  'xaneiro', 
+  'febreiro', 
+  'marzo',
+  'abril',
+  'maio',
+  'xuño',
+  'xullo',
+  'agosto',
+  'septembro',
+  'outubro',
+  'novembro',
+  'decembro'
+]
+
 function calcularAniversario() {
   let dataNacementoStr = dataNacementoIngresada.value;
   let diaDesexado = Number(diaSemanaIngresado.value);
@@ -27,8 +43,7 @@ function calcularAniversario() {
 
   //Comprobar que a data e valida e non esta no futuro
   if (dataNacemento > hoxe) {
-    resultadoDiv.innerText =
-      "Por favor, introduce unha data de nacemento no pasado";
+    resultadoDiv.innerText ="Por favor, introduce unha data de nacemento no pasado";
     return false;
   }
 
@@ -49,12 +64,20 @@ function calcularAniversario() {
     );
   }
 
-  while (dataProximoAniversario.getDay !== diaDesexado) {
+  while (dataProximoAniversario.getDay() !== diaDesexado) {
     //incrementamos o ano para buscar o seguinte aniversario
     dataProximoAniversario.setFullYear(dataProximoAniversario.getFullYear() + 1);
   }
 
-  let inicio=new Date()
-  let fin=new Date(dataProximoAniversario)
-  let diferenciaDias=(fin-inicio)
+let diferenciaDias = Math.round((dataProximoAniversario - hoxe) / (1000 * 60 * 60 * 24));
+
+// Mostrar resultado
+let diaTexto = diasGL[dataProximoAniversario.getDay()];
+let idade = dataProximoAniversario.getFullYear() - dataNacemento.getFullYear();
+
+resultadoDiv.innerHTML = `
+  <p>Próximo aniversario: ${diaTexto}, ${dataProximoAniversario.getDate()}/${dataProximoAniversario.getMonth() + 1}/${dataProximoAniversario.getFullYear()}</p>
+  <p>Idade: ${idade} anos</p>
+  <p>Días que faltan: ${diferenciaDias}</p>
+`;
 }
