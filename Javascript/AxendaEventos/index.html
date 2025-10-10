@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axenda Eventos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Axenda de Eventos</h1>
+        <div class="container1">
+          <h2>Engadir Novo Evento</h2>
+          <form action="#">
+            <label for="data">Data: </label>
+            <input type="date" name="data" id="data" />
+
+            <label for="nome-evento">Nome do Evento: </label>
+            <input
+              type="text"
+              name="nome-evento"
+              id="nome-evento"
+              placeholder="Ex: Reunion ou Exame"
+              required
+            />
+
+            <button id="btnGuardar" type="submit" onclick="gardarEvento()">
+              Gardar Evento
+            </button>
+          </form>
+        </div>
+        <div class="container2">
+          <h2>Proximos Eventos</h2>
+          <div class="filtros">
+            <button class="btnContainer2" id="btnProximaSemana">
+              Proxima Semana
+            </button>
+            <button class="btnContainer2" id="btnProxioMes">Proximo Mes</button>
+            <button class="btnContainer2" id="btnProximoAno">
+              Proximo Ano
+            </button>
+            <button class="btnContainer2" id="btnTodo">Todo</button>
+          </div>
+          <ul id="listaEventos">
+            <li id="evento"></li>
+          </ul>
+          <p id="mensaje"></p>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
