@@ -5,20 +5,24 @@ let mensajeInput=document.getElementById("mensaje");
 let agendaEventos=[];
 
 function gardarEvento() {
-    dataEventoStr=dataEventoInput.value;
+    dataEvento=new Date(dataEventoInput.value);
     nomeEventoStr=nomeEventoInput.value;
-    mensajeStr=mensajeInput.value;
     dataActual=new Date();
 
-    if (dataEventoStr=="" || nomeEventoStr=="") {
-        console.alert("No puedes dejar ningun campo vacío")
-    }
-
-    else if (dataEventoStr<dataActual) {
-        mensajeStr.textContent="La fecha debe ser posterior a la actual"
-    }
-
+    let listaEventos=document.getElementById("listaEventos")
     
 
+    if (dataEvento=="" || nomeEventoStr=="") {
+        alert("No puedes dejar ningun campo vacío")
+    }
+
+    else if (dataEvento<dataActual) {
+        mensajeInput.textContent="La fecha debe ser posterior a la actual"
+    }
+
+    else {
+        agendaEventos.append(listaEventos)
+        listaEventos.textContent="hola"
+    }
 
 }
