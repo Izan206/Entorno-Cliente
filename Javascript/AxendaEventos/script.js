@@ -5,9 +5,9 @@ let mensajeInput=document.getElementById("mensaje");
 let agendaEventos=[];
 
 function gardarEvento() {
-    dataEvento=new Date(dataEventoInput.value);
-    nomeEventoStr=nomeEventoInput.value;
-    dataActual=new Date();
+    let dataEvento=new Date(dataEventoInput.value);
+    let nomeEventoStr=nomeEventoInput.value;
+    let dataActual=new Date();
 
     let listaEventos=document.getElementById("listaEventos")
     

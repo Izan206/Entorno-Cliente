@@ -22,3 +22,25 @@ let resultado=aplicarFuncion(9, function (x) {
 });
 
 console.log(resultado)
+
+//setTimeOut= mostrar un mensaje pasados x segundos
+setTimeout(function (){
+    console.log("Mostrar tras tres segundos")
+}, 3000)
+
+//setInterval= mostrar un mensaje cada x segundos
+let intervalID=setInterval(function() {
+    console.log("Mostrar cada tres segundos")
+}, 3000)
+
+clearInterval(intervalID) //Esto lo para
+
+
+let conta=10
+let intervalID2=setInterval(function() {
+        console.log("Conta atras: ", conta--);
+        if (conta==0) {
+            clearInterval(intervalID2)
+            console.log("Fin")
+        }
+},1000);
