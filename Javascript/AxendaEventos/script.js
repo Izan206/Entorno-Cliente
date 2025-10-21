@@ -1,28 +1,44 @@
 let dataEventoInput=document.getElementById("data");
 let nomeEventoInput=document.getElementById("nome-evento");
 let mensajeInput=document.getElementById("mensaje");
+let listaEventos=document.getElementById("listaEventos")
 
 let agendaEventos=[];
 
 function gardarEvento() {
-    let dataEvento=new Date(dataEventoInput.value);
-    let nomeEventoStr=nomeEventoInput.value;
+    //Obtengo los valores del formulario
+    let dataEventoStr=dataEventoInput.value;
+    let nomeEventoStr=nomeEventoInput.value.trim();
+
+    //COnvierto la fecha a tipo Date
+    let dataEvento=new Date(dataEventoStr);
+    dataEvento.setHours(0,0,0,0) //Para no guardar ni horas ni minutos ni segundos
     let dataActual=new Date();
+    dataActual.setHours(0,0,0,0)
 
-    let listaEventos=document.getElementById("listaEventos")
-    
-
-    if (dataEvento=="" || nomeEventoStr=="") {
-        alert("No puedes dejar ningun campo vacío")
+    if (dataEventoStr === ""|| dataEvento<dataActual) {
+        mensajeInput.textContent="Debes introducir una fecha valida y no anterior a la actual"
+        return;
     }
 
-    else if (dataEvento<dataActual) {
-        mensajeInput.textContent="La fecha debe ser posterior a la actual"
+    if (nomeEventoStr==="") {
+        mensajeInput.textContent="El evento debe tener un nombre"
+        return;
     }
 
-    else {
-        agendaEventos.append(listaEventos)
-        listaEventos.textContent="hola"
-    }
+    agendaEventos.push({
+        data: dataEventoStr,
+        nome: nomeEventoStr
+    })
 
+    renderizarEventos();
+}
+
+function renderizarEventos() {
+    listaEventos.innerHTML="";
+    for (const evento of agendaEventos) {
+        const li=document.createElement("li");
+        li.textContent=`${evento.data} - ${evento.nome}`
+        listaEventos.appendChild(li)
+    }
 }
