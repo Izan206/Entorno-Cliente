@@ -30,8 +30,6 @@ function gardarEvento() {
         data: dataEventoStr,
         nome: nomeEventoStr
     })
-
-    renderizarEventos();
 }
 
 function renderizarEventos() {
@@ -40,5 +38,23 @@ function renderizarEventos() {
         const li=document.createElement("li");
         li.textContent=`${evento.data} - ${evento.nome}`
         listaEventos.appendChild(li)
+    }
+}
+
+function filtrarEventos(filtro) {
+    let hoxe=new Date();
+    if (filtro==="todo") {
+        renderizarEventos();
+    }
+
+    if (filtro==="anhoSiguiente") {
+        for (const evento of agendaEventos) {
+            let fechaEvento=new Date(evento.data).getFullYear();
+            let fechaLimite=fechaEvento+1;
+            if (hoxe<fechaLimite) {
+                renderizarEventos();
+            }
+            
+        }
     }
 }

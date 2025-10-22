@@ -34,14 +34,14 @@
         <div class="container2">
           <h2>Proximos Eventos</h2>
           <div class="filtros">
-            <button class="btnContainer2" id="btnProximaSemana">
+            <button class="btnContainer2" id="btnProximaSemana" onclick="filtrarEventos('semanaSiguiente')">
               Proxima Semana
             </button>
-            <button class="btnContainer2" id="btnProxioMes">Proximo Mes</button>
-            <button class="btnContainer2" id="btnProximoAno">
+            <button class="btnContainer2" id="btnProxioMes" onclick="filtrarEventos('mesSiguiente')">Proximo Mes</button>
+            <button class="btnContainer2" id="btnProximoAno" onclick="filtrarEventos('anhoSiguiente')">
               Proximo Ano
             </button>
-            <button class="btnContainer2" id="btnTodo">Todo</button>
+            <button class="btnContainer2" id="btnTodo" onclick="filtrarEventos('todo')">Todo</button>
           </div>
           <ul id="listaEventos">
             <li id="evento"></li>
