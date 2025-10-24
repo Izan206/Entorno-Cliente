@@ -1,60 +1,100 @@
-let dataEventoInput=document.getElementById("data");
-let nomeEventoInput=document.getElementById("nome-evento");
-let mensajeInput=document.getElementById("mensaje");
-let listaEventos=document.getElementById("listaEventos")
+let dataEventoInput = document.getElementById("data");
+let nomeEventoInput = document.getElementById("nome-evento");
+let mensajeInput = document.getElementById("mensaje");
+let listaEventos = document.getElementById("listaEventos");
 
-let agendaEventos=[];
+let agendaEventos = [];
 
 function gardarEvento() {
-    //Obtengo los valores del formulario
-    let dataEventoStr=dataEventoInput.value;
-    let nomeEventoStr=nomeEventoInput.value.trim();
+  let dataEventoStr = dataEventoInput.value;
+  let nomeEventoStr = nomeEventoInput.value.trim();
 
-    //COnvierto la fecha a tipo Date
-    let dataEvento=new Date(dataEventoStr);
-    dataEvento.setHours(0,0,0,0) //Para no guardar ni horas ni minutos ni segundos
-    let dataActual=new Date();
-    dataActual.setHours(0,0,0,0)
+  let dataEvento = new Date(dataEventoStr);
+  dataEvento.setHours(0, 0, 0, 0);
+  let dataActual = new Date();
+  dataActual.setHours(0, 0, 0, 0);
 
-    if (dataEventoStr === ""|| dataEvento<dataActual) {
-        mensajeInput.textContent="Debes introducir una fecha valida y no anterior a la actual"
-        return;
-    }
+  mensajeInput.textContent = "";
 
-    if (nomeEventoStr==="") {
-        mensajeInput.textContent="El evento debe tener un nombre"
-        return;
-    }
+  if (dataEventoStr === "" || dataEvento < dataActual) {
+    mensajeInput.textContent =
+      "Debes introducir una fecha válida y no anterior a la actual";
+    return;
+  }
 
-    agendaEventos.push({
-        data: dataEventoStr,
-        nome: nomeEventoStr
-    })
+  if (nomeEventoStr === "") {
+    mensajeInput.textContent = "El evento debe tener un nombre";
+    return;
+  }
+
+  agendaEventos.push({
+    data: dataEventoStr,
+    nome: nomeEventoStr,
+    dataObj: dataEvento,
+  });
+
+  renderizarEventos();
+  dataEventoInput.value = "";
+  nomeEventoInput.value = "";
 }
 
-function renderizarEventos() {
-    listaEventos.innerHTML="";
-    for (const evento of agendaEventos) {
-        const li=document.createElement("li");
-        li.textContent=`${evento.data} - ${evento.nome}`
-        listaEventos.appendChild(li)
-    }
+function renderizarEventos(eventos = agendaEventos) {
+  eventos.sort((a, b) => a.dataObj - b.dataObj);
+  listaEventos.innerHTML = "";
+  eventos.forEach((evento, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${formatarData(evento.dataObj)} - ${evento.nome}`;
+
+    // Botón de editar
+    const btnEditar = document.createElement("button");
+    btnEditar.textContent = "Editar";
+    btnEditar.style.marginLeft = "10px";
+    btnEditar.onclick = () => editarEvento(index);
+    li.appendChild(btnEditar);
+
+    listaEventos.appendChild(li);
+  });
 }
 
 function filtrarEventos(filtro) {
-    let hoxe=new Date();
-    if (filtro==="todo") {
-        renderizarEventos();
-    }
+  let hoxe = new Date();
+  hoxe.setHours(0, 0, 0, 0);
+  let dataLimite = new Date();
+  dataLimite.setHours(0, 0, 0, 0);
 
-    if (filtro==="anhoSiguiente") {
-        for (const evento of agendaEventos) {
-            let fechaEvento=new Date(evento.data).getFullYear();
-            let fechaLimite=fechaEvento+1;
-            if (hoxe<fechaLimite) {
-                renderizarEventos();
-            }
-            
-        }
-    }
+  if (filtro === "todo") {
+    renderizarEventos();
+    return;
+  } else if (filtro === "semanaSiguiente") {
+    dataLimite.setDate(hoxe.getDate() + 7);
+  } else if (filtro === "mesSiguiente") {
+    dataLimite.setMonth(hoxe.getMonth() + 1);
+  } else if (filtro === "anhoSiguiente") {
+    dataLimite.setFullYear(hoxe.getFullYear() + 1);
+  }
+
+  let eventosFiltrados = agendaEventos.filter(
+    (evento) => evento.dataObj >= hoxe && evento.dataObj <= dataLimite
+  );
+
+  renderizarEventos(eventosFiltrados);
+}
+
+function formatarData(data) {
+  let opcions = {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  return data.toLocaleDateString("gl-ES", opcions);
+}
+
+function editarEvento(index) {
+  let evento = agendaEventos[index];
+  if (!evento) return;
+  dataEventoInput.value = evento.data;
+  nomeEventoInput.value = evento.nome;
+  agendaEventos.splice(index, 1);
+  renderizarEventos();
 }

@@ -31,11 +31,12 @@ main {
     margin: 20px;
     padding: 20px;
     box-shadow: 0 0 10px;
+    text-align: center;
 }
 
 .container1 form {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 5px;
     padding: 20px;
 }
@@ -85,13 +86,14 @@ main {
 
 .btnContainer2:hover {
     background-color: yellow;
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
-@media (width<600px) {
-    
+@media (max-width:600px) {
+    .container1 form {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
-@media (media>=600px) {
-    
-}

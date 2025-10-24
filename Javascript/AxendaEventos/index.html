@@ -14,10 +14,10 @@
         <div class="container1">
           <h2>Engadir Novo Evento</h2>
           <form action="#">
-            <label for="data">Data: </label>
+            <label for="data">Data:</label>
             <input type="date" name="data" id="data"/>
 
-            <label for="nome-evento">Nome do Evento: </label>
+            <label for="nome-evento">Nome do Evento:</label>
             <input
               type="text"
               name="nome-evento"
@@ -25,31 +25,25 @@
               placeholder="Ex: Reunion ou Exame"
               required
             />
-
+            <div></div>
             <button id="btnGuardar" type="button" onclick="gardarEvento()">
               Gardar Evento
             </button>
           </form>
+          <p id="mensaje"></p>
         </div>
+
         <div class="container2">
           <h2>Proximos Eventos</h2>
           <div class="filtros">
-            <button class="btnContainer2" id="btnProximaSemana" onclick="filtrarEventos('semanaSiguiente')">
-              Proxima Semana
-            </button>
-            <button class="btnContainer2" id="btnProxioMes" onclick="filtrarEventos('mesSiguiente')">Proximo Mes</button>
-            <button class="btnContainer2" id="btnProximoAno" onclick="filtrarEventos('anhoSiguiente')">
-              Proximo Ano
-            </button>
-            <button class="btnContainer2" id="btnTodo" onclick="filtrarEventos('todo')">Todo</button>
+            <button class="btnContainer2" onclick="filtrarEventos('semanaSiguiente')">Proxima Semana</button>
+            <button class="btnContainer2" onclick="filtrarEventos('mesSiguiente')">Proximo Mes</button>
+            <button class="btnContainer2" onclick="filtrarEventos('anhoSiguiente')">Proximo Ano</button>
+            <button class="btnContainer2" onclick="filtrarEventos('todo')">Todo</button>
           </div>
-          <ul id="listaEventos">
-            <li id="evento"></li>
-          </ul>
-          <p id="mensaje"></p>
+          <ul id="listaEventos"></ul>
         </div>
       </div>
     </main>
-    
   </body>
 </html>
