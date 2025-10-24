@@ -43,6 +43,7 @@ body {
     border: none;
     color: white;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 #entrada-tarefa {
@@ -77,6 +78,21 @@ body {
     justify-content: space-between;
     border-radius: 8px;
 }
+
+.elemento-tarefa button {
+    border: none;
+    padding: 5px;
+    background: transparent;
+}
+
+.btn-completar {
+    color: green;
+}
+
+.btn-eliminar {
+    color: red;
+}
+
 @media (max-width: 600px) {
     .contedor-principal {
         width: 450px;
