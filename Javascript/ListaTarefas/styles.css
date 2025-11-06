@@ -79,6 +79,10 @@ body {
     border-radius: 8px;
 }
 
+.elemento-tarefa.completada{
+    background-color: rgb(223, 255, 223);
+    text-decoration: line-through;
+}
 .elemento-tarefa button {
     border: none;
     padding: 5px;
