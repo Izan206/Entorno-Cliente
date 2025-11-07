@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #d6d6d6;
+}
+
+.container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 90%;
+  padding: 20px 0;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  gap: 10px;
+}
+
+.area-xogo {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  gap: 5px;
+  padding: 5px;
+}
+
+.area-xogo input {
+  padding: 5px;
+}
+
+.area-xogo button {
+  padding: 5px;
+  background-color: aqua;
+  border: none;
+  border-radius: 8px;
+}
+
+.area-resultado {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

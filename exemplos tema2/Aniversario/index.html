@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniversario</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="caja">
+        <h1>Busca o teu Aniversario Perfecto</h1>
+        <p>Introduce a tua data de nacemento e un día da semana</p>
+        <div class="formulario">
+          <form action="">
+            <label for="data">Data de Nacemento: </label>
+            <!-- 15/02/2006 un Lunes-->
+            <input type="date" name="data" id="data" />
+
+            <label for="dia-semana">Dia da Semana Deseado: </label>
+            <select id="dia-semana" required>
+              <option value="">Selecciona un dia</option>
+              <option value="1">Luns</option>
+              <option value="2">Martes</option>
+              <option value="3">Mercores</option>
+              <option value="4">Xoves</option>
+              <option value="5">Venres</option>
+              <option value="6">Sabado</option>
+              <option value="0">Domingo</option>
+            </select>
+
+            <button type="button" onclick="calcularAniversario()">
+              Calcular Próximo Aniversario
+            </button>
+          </form>
+        </div>
+        <div id="resultado" class="resultado"></div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

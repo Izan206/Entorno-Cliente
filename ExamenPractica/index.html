@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen DWCC - Gestor de Tareas</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="variables.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Mi Gestor de Tareas</h1>
+    </header>
+
+    <nav class="nav-principal">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Tareas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-container">
+      <section class="gestor-tareas">
+        <h2>Nueva Tarea</h2>
+        <div class="formulario-tarea">
+          <input
+            type="text"
+            id="nuevaTareaInput"
+            placeholder="Descripción de la tarea..."
+          />
+          <input type="date" id="nuevaTareaFecha" />
+          <button onclick="agregarTarea()">Agregar Tarea</button>
+        </div>
+
+        <h2>Mis Tareas Pendientes</h2>
+        <div id="listaTareas" class="lista-tareas-container">
+          <!-- <div class="tarea-item">
+            <p>Estudiar Grid (Fecha: 2025-11-05)</p>
+            <button onclick="eliminarTarea(0)">Eliminar</button>
+          </div> -->
+        </div>
+      </section>
+
+      <aside class="dashboard">
+        <div class="widget widget-1">
+          <h3>Tareas Totales</h3>
+          <p>5</p>
+        </div>
+        <div class="widget widget-2">
+          <h3>Tareas Urgentes</h3>
+          <p>2</p>
+        </div>
+        <div class="widget widget-3">
+          <h3>Estadísticas</h3>
+          <p>Gráfico...</p>
+        </div>
+        <div class="widget widget-4">
+          <h3>Perfil</h3>
+          <p>Usuario Activo</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Examen Desarrollo Web en Contorno Cliente</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

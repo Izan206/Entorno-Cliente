@@ -1,0 +1,93 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* CABECEIRA */
+header {
+  text-align: center;
+}
+
+/* Título AXENDA DE CONTACTOS */
+h1 {
+  margin: 0;
+  /* ✅ Usa padding para crear espazo arredor do título, 
+       pero dentro da altura do contedor-principal. */
+  padding: 20px 0;
+  font-size: 2.5em;
+}
+
+.contedor-principal {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 90%;
+}
+
+.vista-axenda {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#formulario-seccion {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-contactos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+label,
+input,
+textarea {
+  grid-column: 1 / span 4;
+}
+
+button {
+  padding: 8px;
+  background-color: rgb(0, 162, 255);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#listaxe-seccion {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Separamos os contidos da listaxe dos seus lÃ­mites */
+#listaxe-contactos {
+  margin-top: 10px;
+}
+
+.contacto {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Mellorar a lexibilidade do texto */
+body,
+input,
+textarea {
+  line-height: 1.6;
+}

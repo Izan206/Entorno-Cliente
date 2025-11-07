@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor Flex */
+.barra {
+  display: flex;
+  width: 600px; /* Ancho fijo para el ejemplo */
+  height: 100px;
+  border: 2px solid #0056b3;
+  background-color: #f0f8ff;
+  margin: 50px auto;
+}
+
+/* Estilos de los ítems */
+.item {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 80px; /* Centra el texto verticalmente */
+}
+
+/* Colores */
+.item-1 {
+  background-color: #28a745;
+  /* flex: grow shrink basis;  */
+  flex: 0 0 100px;
+}
+.item-2 {
+  background-color: #ffc107;
+  flex: 2 1 100px;
+}
+.item-3 {
+  background-color: #dc3545;
+  flex: 1 1 100px;
+}

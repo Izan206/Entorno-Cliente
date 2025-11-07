@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Exemplo 09: acceso a formularios HTML dende JS</title>
+    <link rel="stylesheet" type="text/css" href="exemplo09.css">
+</head>
+
+<body>
+    <form id="formulario" onsubmit="event.preventDefault()">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="apelidos">Apelidos: </label>
+        <input type="text" name="apelidos" id="apelidos">
+
+        <label for="idade">Idade: </label>
+        <input type="number" name="idade" id="idade">
+
+        <button onclick="gardar()">GARDAR</button>
+        <button onclick="borrar()">BORRAR</button>
+        <button onclick="encher()">ENCHER</button>
+    </form>
+    <script language="JavaScript" src="exemplo09.js"></script>
+</body>
+
+</html>

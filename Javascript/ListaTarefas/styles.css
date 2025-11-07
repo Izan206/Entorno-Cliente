@@ -1,82 +1,82 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(217, 237, 255, 0.883);
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(217, 237, 255, 0.883);
 }
 
 .contedor-principal {
-    border-radius: 8px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    height: auto;
-    width: 600px;
-    gap: 15px;
-    box-shadow: 0 0 2px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: auto;
+  width: 600px;
+  gap: 15px;
+  box-shadow: 0 0 2px;
 }
 
 .contedor-principal h1 {
-    color: rgb(0, 132, 255);
+  color: rgb(0, 132, 255);
 }
 
 .formulario-tarefa {
-    display: flex;
-    gap: 15px; 
+  display: flex;
+  gap: 15px;
 }
 
 .formulario-tarefa button {
-    padding: 5px;
-    background-color: rgb(0, 145, 255);
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+  padding: 5px;
+  background-color: rgb(0, 145, 255);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #entrada-tarefa {
-    padding: 5px;
-    border: 1px solid rgb(163, 226, 255);
-    border-radius: 7px;
+  padding: 5px;
+  border: 1px solid rgb(163, 226, 255);
+  border-radius: 7px;
 }
 
 .formulario-tarefa button:hover {
-    background-color: rgb(0, 115, 255);
-    transition: 0.3s ease-in-out;
+  background-color: rgb(0, 115, 255);
+  transition: 0.3s ease-in-out;
 }
 
 .formulario-tarefa button:active {
-    background-color: rgb(255, 255, 255);
-    color: black;
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 #lista-tarefas {
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .elemento-tarefa {
-    background-color: rgb(247, 247, 247);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 8px;
+  background-color: rgb(222, 222, 222);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
 }
 
 .elemento-tarefa.completada{
@@ -84,25 +84,35 @@ body {
     text-decoration: line-through;
 }
 .elemento-tarefa button {
-    border: none;
-    padding: 5px;
-    background: transparent;
+  border: none;
+  padding: 5px;
+  background: transparent;
 }
 
 .btn-completar {
-    color: green;
+  color: green;
 }
 
 .btn-eliminar {
-    color: red;
+  color: red;
+}
+
+.elemento-tarefa.tarefa-completada {
+  background-color: rgb(240, 255, 240);
+  text-decoration: line-through;
+}
+
+.elemento-tarefa button:hover {
+  transform: scale(1.02);
+  background-color: azure;
 }
 
 @media (max-width: 600px) {
-    .contedor-principal {
-        width: 450px;
-    }
-    .formulario-tarefa {
-        display: flex;
-        flex-direction: column;
-    }
+  .contedor-principal {
+    width: 450px;
+  }
+  .formulario-tarefa {
+    display: flex;
+    flex-direction: column;
+  }
 }
