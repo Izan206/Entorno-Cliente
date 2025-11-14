@@ -39,3 +39,10 @@ setTimeout(() => {
         novaVentana.close();
     }
 }, 7000)
+
+setTimeout(() => {
+  window.scrollTo(0, 0);
+}, 3000)
+
+sessionStorage.setItem("usuario", nome)
+console.log("Almacenado en sesion: ", sessionStorage.getItem("usuario"))
