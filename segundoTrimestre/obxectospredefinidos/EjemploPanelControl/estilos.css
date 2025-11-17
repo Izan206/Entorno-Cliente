@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0, 102, 255);
+}
+
+h2 {
+    color: rgb(0, 115, 255);;
+}
+
+.contedor_principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-analise {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.seccion-galeria {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+}
+
+.seccion-controles {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+}
+img {
+    width: 150px;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(0, 115, 255);
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control BOM</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="contedor-principal">
+        <h1>Panel de Control de Contorna e Navegación (BOM)</h1>
+        
+        <section class="seccion-analise">
+            <h2>Análise do Contorna e Localización (Navigator, Screen)</h2>
+            <hr>
+            <p><strong>Navegador:</strong> <span id="info-navegador"></span></p>
+            <p><strong>S.O. detectado:</strong> <span id="info-so"></span></p>
+            <p><strong>URL Actual (Location):</strong> <span id="url-actual"></span></p>
+            <p><strong>Xeolocalización:</strong> <span id="info-xeoloc"></span></p>
+        </section>
+
+        <section class="seccion-galeria">
+            <h2>Galería Dinámica e Historial (History)</h2>
+            <div class="contedor-imaxes">
+                <img id="imaxe-principal" src="imaxes/i1.png" alt="Imaxe principal" class="imaxe-grande">
+                
+                <div class="miniaturas">
+                    <img src="imaxes/i1.png" data-id="i1" onclick="mudarImaxe('i1.png')" alt="Miniatura 1" class="miniatura">
+                    <img src="imaxes/i2.png" data-id="i2" onclick="mudarImaxe('i2.png')" alt="Miniatura 2" class="miniatura">
+                    <img src="imaxes/i3.png" data-id="i3" onclick="mudarImaxe('i3.png')" alt="Miniatura 3" class="miniatura">
+                </div>
+            </div>
+            
+            <div class="contedor-historial">
+                <button onclick="navegarHistorial('atras')">← Atrás (History)</button>
+                <button onclick="navegarHistorial('adiante')">Adiante (History) →</button>
+            </div>
+        </section>
+
+        <section class="seccion-controles">
+            <h2>Control de Fiestras e Pestañas (Window)</h2>
+            <div class="grupo-controles">
+                <button onclick="abrirFiestraAviso()">Abrir Fiestra Pop-up (Pecha en 5s)</button>
+            </div>
+            
+            <div class="grupo-controles">
+                <input type="text" id="input-titulo" placeholder="Novo título para a pestana">
+                <button onclick="actualizarTituloPestana()">Actualizar Título (document.title)</button>
+            </div>
+        </section>
+    </div>
+    
+
+</body>
+</html>
