@@ -9,7 +9,7 @@ lerBtn.addEventListener("click", ler)
 borrarBtn.addEventListener("click", borrar)
 
 function gardar() {
-    localStorage.setItem("username: ", input.value)
+    localStorage.setItem("username", input.value)
 }
 
 function ler() {
@@ -18,5 +18,4 @@ function ler() {
 
 function borrar() {
     localStorage.clear()
-    ler()
 }
