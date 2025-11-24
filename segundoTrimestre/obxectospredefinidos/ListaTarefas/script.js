@@ -9,6 +9,9 @@ function engadirTarefa() {
     return;
   }
 
+  if (localStorage(entradaStr.value)) {
+    return alert("A tarefa xa existe!") //Comprueba si existe la tarea en el local storage
+  }
   localStorage.setItem(entradaStr, valor);
   entradaInput.value = "";
   renderizarTarefa();
@@ -71,3 +74,5 @@ document.getElementById("entrada-tarefa").addEventListener('keypress', (tecla) =
     engadirTarefa()
   }
 })
+
+// RESTRICCIONES DE USO
