@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axenda Eventos</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Axenda de Eventos</h1>
+        <div class="container1">
+          <h2>Engadir Novo Evento</h2>
+          <form action="#" id="formulario">
+            <label for="data">Data:</label>
+            <input type="date" name="data" id="data" />
+
+            <label for="nome-evento">Nome do Evento:</label>
+            <input
+              type="text"
+              name="nome-evento"
+              id="nome-evento"
+              placeholder="Ex: Reunion ou Exame"
+              required
+            />
+            <div></div>
+            <button id="btnGuardar" type="button" onclick="gardarEvento()">
+              Gardar Evento
+            </button>
+          </form>
+          <p id="mensaje"></p>
+        </div>
+
+        <div class="container2">
+          <h2>Proximos Eventos</h2>
+          <div class="filtros">
+            <button
+              class="btnContainer2"
+              onclick="filtrarEventos('semanaSiguiente')"
+            >
+              Proxima Semana
+            </button>
+            <button
+              class="btnContainer2"
+              onclick="filtrarEventos('mesSiguiente')"
+            >
+              Proximo Mes
+            </button>
+            <button
+              class="btnContainer2"
+              onclick="filtrarEventos('anhoSiguiente')"
+            >
+              Proximo Ano
+            </button>
+            <button class="btnContainer2" onclick="filtrarEventos('todo')">
+              Todo
+            </button>
+          </div>
+          <ul id="listaEventos">
+            <!-- <li>
+              <span>Examen Javascript</span>
+              <p>6/11/2025</p>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

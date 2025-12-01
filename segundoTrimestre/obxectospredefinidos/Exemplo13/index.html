@@ -20,18 +20,28 @@
             <button type="button" id="btnCrear">Crear/abrir a BD videoxogos</button>
             <button type="button" id="btnInsertar">Insertar Rexistro</button>
             <button type="button" id="btnListar">Listar todos os videoxogos</button>
-            <button type="button" id="btnActualizar">Actualizar Rexistro</button>
+            <button type="button" id="btnListarPorNome">Listar os videoxogos por nome</button>
         </div>
         <div id="mensaxe"></div>
-      </form>
+        </form>
 
-      <form action="" method="post">
-       <h2>Lista de videoxogos</h2>
+        <form action="" method="post">
+            <h2>Lista de videoxogos</h2>
+            <div id="lista"></div>
+        </form>
 
-        <label for="nome">Id para ler:</label>
-        <input type="text" placeholder="ID de rexistro" id="id">
-
-       <button type="button" id="btnLerRexistro">Ler rexistro</button>
-      </form>
+        <form action="" method="post">
+            <h2>Ler/Actualizar rexistro</h2>
+            <label for="id">Id para ler:</label>
+            <input type="text" placeholder="ID de rexistro" id="id">
+            
+            <div class="contedor-btns">
+                <button type="button" id="btnlerRexistro">Ler rexistro</button>
+                <button type="button" id="btnActualizar">Actualizar rexistro</button>
+            </div>
+            
+            <div id="rexistroLido"></div>
+        </form>
     </div>
+  </body>
 </html>

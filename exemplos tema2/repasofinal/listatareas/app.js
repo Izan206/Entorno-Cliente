@@ -1,20 +1,26 @@
 let entradaInput = document.getElementById("entrada-tarefa");
-let tarefasHTML = document.getElementById("lista-tarefas");
+let listaTarefasHTML = document.getElementById("lista-tarefas");
 
 let tarefas = [];
 
+function limpiarFormulario() {
+  entradaInput.value = "";
+}
+
 function engadirTarefa() {
-  let entradaStr = entradaInput.value;
-  let fecha = new Date();
+  let entrada = entradaInput.value;
+
+  if (entrada === "") {
+    return;
+  }
 
   let tarefa = {
-    id: fecha,
-    nome: entradaStr,
+    nome: entrada,
     completada: false,
   };
 
   tarefas.push(tarefa);
-  entradaInput.value = "";
+  limpiarFormulario();
   renderizarTarefa();
 }
 
@@ -23,9 +29,9 @@ function renderizarTarefa() {
     let clase = elemento.completada
       ? "elemento-tarefa completada"
       : "elemento-tarefa";
-    return `
+    return ` 
             <li class="${clase}">
-                <span>${elemento.nome}</span>
+                <p>${elemento.nome}</p>
                 <div class="contedor-btns">
                     <button class="btn-completar" onclick="completarTarefa(${index})">✔</button>
                     <button class="btn-eliminar" onclick="eliminarTarefa(${index})">✖</button>
@@ -34,16 +40,16 @@ function renderizarTarefa() {
         `;
   });
 
-  tarefasHTML.innerHTML = elementoHTML.join("");
-}
-
-function eliminarTarefa(index) {
-  tarefas.splice(index, 1);
-  renderizarTarefa();
+  listaTarefasHTML.innerHTML = elementoHTML.join("");
 }
 
 function completarTarefa(index) {
   let tarefa = tarefas[index];
   tarefa.completada = !tarefa.completada;
+  renderizarTarefa();
+}
+
+function eliminarTarefa(index) {
+  tarefas.splice(index, 1);
   renderizarTarefa();
 }

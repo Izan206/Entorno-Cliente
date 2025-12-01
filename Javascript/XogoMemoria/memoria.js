@@ -34,7 +34,14 @@ function embarallarArray(array) {
 function iniciarXogo() {}
 
 // Función para renderizar todo o taboleiro usando innerHTML
-function renderizarTaboleiro() {}
+function renderizarTaboleiro() {
+    let taboleiro=""
+    for (emoticono of emoticonosBase) {
+        let carta.innerHTML=`
+            
+        `
+    }
+}
 
 // Lóxica para voltear as cartas
 function voltearCarta(indice) {}

@@ -3,6 +3,7 @@ let btnCrear = document.getElementById("btnCrear");
 let btnInsertar = document.getElementById("btnInsertar");
 let btnListar = document.getElementById("btnListar");
 let btnLerRexistro = document.getElementById("btnlerRexistro");
+let btnActualizar = document.getElementById("btnActualizar");
 let mensaxe = document.getElementById("mensaxe");
 let db;
 let temporizador;
@@ -16,6 +17,7 @@ btnLerRexistro.addEventListener("click", () => {
     let id = document.getElementById("id").value;
     lerRexistro(id);
 });
+btnActualizar.addEventListener("click", actualizarBase)
 
 function crearBase() {
   let solicitude = novaBD.open("videoxogos_db", 1);
@@ -121,65 +123,91 @@ function iniciarTemporizadorPechado() {
 }
 
 function listarVideoxogos() {
-    let listaDiv;
+    let listaDiv = document.getElementById("lista");
     if (!db) {
-
+        mensaxe.textContent = "A BD non esta aberta";
+        return;
     }
 
-    let tx=db.transaction("videoxogos", "readonly")
-    let almacen=tx.objectStore("videoxogos")
-    let cursor=almacen.openCursor();
+    let tx = db.transaction("videoxogos", "readonly");
+    let almacen = tx.objectStore("videoxogos");
+    let cursor = almacen.openCursor();
 
-    listaDiv.innerHTML="";
+    let elementoHTML = [];
 
     cursor.onsuccess = () => {
-        let rexistro=cursor.result;
+        let rexistro = cursor.result;
         if (rexistro) {
-            let li=document.createElement("li")
-            li.textContent=`${rexistro.value.id} - ${rexistro.value.nome} (${rexistro.value.categoria})`
-            listaDiv.appendChild(li)
-
+            elementoHTML.push(`<p>${rexistro.value.id} - ${rexistro.value.nome} (${rexistro.value.categoria})</p>`);
             rexistro.continue();
         } else {
-            if(listaDiv.children.length==0) {
-                listaDiv.textContent="Non hai rexistros na BD"
+            if (elementoHTML.length == 0) {
+                listaDiv.textContent = "Non hai rexistros na BD";
+            } else {
+                listaDiv.innerHTML = elementoHTML.join("");
             }
         }
-    }
-  let elementoHTML = videoxogos.map((v) => {
-    return `<p>Videoxogo: ${v.nome}. Aventura: ${v.categoria}</p>`;
-  });
-
-  mensaxe.innerHTML = elementoHTML.join("");
+    };
 }
 
 function lerRexistro(id) {
-      if (!db) {
-
+    let rexistroLidoDiv = document.getElementById("rexistroLido");
+    if (!db) {
+        mensaxe.textContent = "A BD non esta aberta";
+        return;
     }
-    let inputID=document.getElementById("id")
+    let inputID = document.getElementById("id");
+    let numId = Number(inputID.value);
 
-    let id=Number(inputID);
+    let tx = db.transaction("videoxogos", "readonly");
+    let almacen = tx.objectStore("videoxogos");
+    let req = almacen.get(numId);
 
-    let tx=db.transaction("videoxogos","readonly")
-    let almacen=tx.objectStore("videoxogos")
-    let req=almacen.get(id)
+    req.onsuccess = () => {
+        if (req.result) {
+            rexistroLidoDiv.innerHTML = `
+                <strong>ID: </strong> ${req.result.id}<br>
+                <strong>Nome: </strong> ${req.result.nome}<br>
+                <strong>Categoria: </strong> ${req.result.categoria}
+            `;
+            console.log("Rexistro lido: ", req.result);
+            document.getElementById("id").value = "";
+            document.getElementById("id").focus();
+        } else {
+            rexistroLidoDiv.textContent = "Non hai rexistro con ese ID.";
+            console.log("Non hai rexistro con ese id");
+            document.getElementById("id").value = "";
+            document.getElementById("id").focus();
+        }
+    };
+}
 
-    req.onsuccess=() => {
-      if (req.result) {
-        rexistroLidoDiv.innerHTML= `
-          <strong>ID: </strong> ${req.result.id}<br>
-          <strong>Nome: </strong> ${req.result.nome}<br>
-          <strong>Categoria: </strong> ${req.result.categoria}
-        `
-        console.log("Rexistro lido: ", req.result)
-        document.getElementById("id").value=""
-        document.getElementById("id").focus()
-      } else {
-        rexistroLidoDiv.textContent="Non hai rexistro con ese ID.";
-        console.log("Non hai rexistro con ese id")
-        document.getElementById("id").value=""
-        document.getElementById("id").focus()
-      }
+function actualizarBase() {
+    let rexistroLidoDiv = document.getElementById("rexistroLido");
+    if (!db) {
+        mensaxe.textContent = "A BD non esta aberta";
+        return;
     }
+    let inputID = document.getElementById("id");
+    let numId = Number(inputID.value);
+    let nome = document.getElementById("nome").value.trim();
+    let categoria = document.getElementById("categoria").value.trim();
+
+    let tx = db.transaction("videoxogos", "readwrite");
+    let almacen = tx.objectStore("videoxogos");
+    let req = almacen.get(numId);
+
+    req.onsuccess = () => {
+        if (req.result) {
+            req.result.nome = nome;
+            req.result.categoria = categoria;
+
+            let reqActualizacion = almacen.put(req.result);
+            reqActualizacion.onsuccess = () => {
+                mensaxe.textContent = `Se ha actualizado correctamente la base de datos`;
+                console.log("Se ha actualizado correctamente la base de datos");
+                rexistroLidoDiv.innerHTML = "";
+            };
+        }
+    };
 }
