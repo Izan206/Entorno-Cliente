@@ -1,26 +1,50 @@
 let estado=document.getElementById("estado")
-let logs=document.getElementById("log-mensaxes")
-let input=document.getElementById("input-mensaxe")
+let logsDiv=document.getElementById("log-mensaxes")
+let inputMensaxe=document.getElementById("input-mensaxe")
+let btnEnviar=document.getElementById("btn-enviar")
+let btnConexion=document.getElementById("btn-conexion")
 
-const socketCliente = new WebSocket("ws://localhost:8085");
-socketCliente.addEventListener("open", () => {
-  console.log("Conectado ao servidor.");
-  alert("[open] Conexion establecida")
-  socketCliente.send("Ola, Servidor!");
-});
+let socket=null
+let PORT="ws://localhost:8085"
 
-function enviarMensaxe() {
-  socketCliente.addEventListener("message", (mensaxe) => {
-  console.log("O servidor enviou a seguinte mensaxe: " + mensaxe.data);
-});
-}
+function conectar(){
+  socket = new WebSocket(PORT);
+  let pInicial=document.createElement("p")
+  pInicial.textContent=`⏳ Tentando conectar a ${PORT}...`
+  logsDiv.appendChild(pInicial)
 
-function xestionarConexion() {
-    socketCliente.onclick=function(evento) {
+  socket.addEventListener("open", () => {
+    console.log("Conectado al servidor")
+    estado.style.color="green"
+    estado.textContent="CONECTADO"
+
+    let pConexion=document.createElement("p")
+    pConexion.style.color="green"
+    pConexion.textContent="💡 CONEXION ABERTA: Listo para enviar e recibir"
+    logsDiv.appendChild(pConexion)
+
+    socket.send("Ola, servidor!")
+  })
+
+  socket.addEventListener("message", (evento) => {
+    console.log("Datos recibidos: "+evento.data)
+    let pServidor=document.createElement("p")
+    pServidor.textContent=`SERVIDOR: ${evento.data}`
+    logsDiv.appendChild(pServidor)
+  })
+
+  socket.addEventListener("close", (evento) => {
     if (evento.wasClean) {
-        alert(`[close] Conexion cerrada limpamente, código=${evento.code} motivo=${evento.reason}`)
+        console.log(`[close] Conexion cerrada limpamente, código=${evento.code} motivo=${evento.reason}`)
     } else {
-        alert(`[close] A conexion caeuse inesperadamente`)
+        console.log(`[close] A conexion caeuse inesperadamente`)
     }
+
+    let pClose=document.createElement("p")
+    pClose.textContent=`🔴 CONEXION PECHADA. Codigo: ${evento.code}`
+    logsDiv.appendChild(pClose)
+    socket=null
+  })
 }
-}
+
+conectar()
