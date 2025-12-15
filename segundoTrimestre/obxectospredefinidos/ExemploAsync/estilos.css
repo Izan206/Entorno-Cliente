@@ -1,0 +1,91 @@
+/* VARIABLES */
+:root {
+    --cor-fondo-principal: #f4f4f4;
+    --cor-primaria: #007bff;
+    --cor-secundaria: #0056b3;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cor-fondo-principal);
+    margin: 0;
+    padding: 2em;
+}
+
+.contedor-principal {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--cor-sombra);
+}
+
+h1 {
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+button:hover {
+    background: #052364;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+button:disabled:hover {
+    background: #44474e;
+}
+#mensaxe {
+    margin-bottom: 1em;
+    color: #555;
+}
+#listaUsuarios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+}
+#listaUsuarios li {
+    background: #fff;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#listaUsuarios li:hover {
+    background: #e0e0e0;
+}
+#detallesUsuario {
+    background: #fff;
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-width: 400px;
+}

@@ -1,0 +1,172 @@
+/* Reset e estilos xerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables para cores */
+:root {
+    --cor-fondo-principal: #fefefe;
+    --cor-primaria: #007bff; /* Azul */
+    --cor-secundaria: #0056b3; /* Azul escuro */
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-fondo-claro: #f8f9fa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fondo-claro);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aliñado arriba */
+    min-height: 100vh;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.contedor-principal {
+    background-color: var(--cor-fondo-principal);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--cor-sombra);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1, h2 {
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilo para a sección de engadir evento */
+.engadir-evento, .lista-eventos {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    align-items: end;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    align-self: center;
+}
+
+input[type="date"], input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estilo para a lista de eventos */
+.opcions-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.opcions-filtro button {
+    background-color: #6c757d;
+    font-size: 14px;
+}
+.opcions-filtro button:hover {
+    background-color: #5a6268;
+}
+
+#lista-eventos {
+    list-style-type: none;
+    padding: 0;
+}
+
+.elemento-evento {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: var(--cor-fondo-claro);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px var(--cor-sombra);
+}
+
+.data {
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+.nome {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+/* Estilo para o botón de eliminar (✖) */
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #dc3545; /* Vermello */
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 8px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Estilo para o botón de eliminar (✏️) */
+.btn-editar {
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 8px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-eliminar:hover {
+    background-color: #f8d7da; /* Fondo vermello claro ao pasar o rato */
+    border-radius: 4px;
+}
+
+.btn-editar:hover {
+    background-color: #a9b6fa; /* Fondo azul claro ao pasar o rato */
+    border-radius: 4px;
+}
+
+#mensaxe-baleiro {
+    text-align: center;
+    color: #999;
+    padding: 10px;
+}
+
+/* Adaptación para pantallas pequenas */
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+}
