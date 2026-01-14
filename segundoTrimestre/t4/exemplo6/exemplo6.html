@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Closures - Eventos</title>
+    <script src="exemplo6.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+        #btn-gardar { background-color: #28a745; color: white; }
+        #btn-cancelar { background-color: #dc3545; color: white; }
+        button:hover { opacity: 0.8; }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            min-height: 40px;
+            text-align: left;
+        }
+        #resultado p {
+            margin: 5px 0;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Xestión de Eventos</h1>
+        <p>Cada botón ten o seu propio <strong>Closure</strong> para contar clics.</p>
+        
+        <div class="btn-group">
+            <button id="btn-gardar">Gardar Cambios</button>
+            <button id="btn-cancelar">Cancelar Acción</button>
+        </div>
+
+        <div id="resultado"></div>
+    </div>
+
+
+</body>
+</html>
