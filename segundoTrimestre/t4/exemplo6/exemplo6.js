@@ -1,31 +1,23 @@
-// Ejemplo 1 Clásico
+let btnGardar = document.getElementById("btn-gardar");
+let btnCancelar = document.getElementById("btn-cancelar");
+let divHTML = document.getElementById("resultado");
 
-// function crearContador() {
-//     let conta=0
-//     return function() {
-//         conta++
-//         console.log("Valor actual: "+conta)
-//     }
-// }
-
-// const contador1=crearContador()
-
-// contador1()
-// contador1()
-
-// const contador2=crearContador()
-// contador2()
-
-// Ejemplo 2
-
-function crearSaudo(mensaxe) {
-    return function(nome) {
-        console.log(mensaxe + ", "+ nome+ "!")
-    }
+function crearContador() {
+  let conta = 0;
+  return function (nome) {
+    conta++;
+    let p = document.createElement("p");
+    p.textContent += `Levas ${conta} clicks seguidos no ${nome}  \n`;
+    divHTML.appendChild(p);
+    return conta;
+  };
 }
+let contadorGardar = crearContador();
+let contadorCancelar = crearContador();
 
-const saudoGalego=crearSaudo("Boas")
-saudoGalego("Izan")
-
-const saudoInformal=crearSaudo("Que tal")
-saudoInformal("Izan")
+btnGardar.addEventListener("click", function () {
+  contadorGardar("boton gardar");
+});
+btnCancelar.addEventListener("click", function () {
+  contadorCancelar("boton cancelar");
+});
