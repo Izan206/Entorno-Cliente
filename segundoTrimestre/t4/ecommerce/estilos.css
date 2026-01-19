@@ -1,0 +1,156 @@
+/* Nome e apelidos: [Nome do Alumno], Equipo: [Nome do Equipo] */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contedor-principal {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 30px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contedor-produtos {
+    flex: 1;
+}
+
+.contedor-carriño {
+    flex: 1;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: #007bff;
+}
+
+/* LISTAS */
+#lista-produtos, #lista-carriño {
+    list-style: none;
+    padding: 0;
+}
+
+.produto-item, .carriño-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.produto-item span:first-child, .carriño-item span:first-child {
+    font-weight: bold;
+    flex: 2;
+}
+
+.produto-item span:nth-child(2) {
+    flex: 1.5;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.carriño-item span {
+    flex: 1;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.carriño-item strong {
+    flex: 1;
+    text-align: right;
+    color: #28a745;
+}
+
+.carriño-baleiro {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* BOTÓNS */
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-engadir {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-engadir:hover:not([disabled]) {
+    background-color: #218838;
+}
+
+.btn-engadir[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* RESUMO CARRIÑO */
+.resumo-carriño {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    text-align: right;
+}
+
+.resumo-carriño h3 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.resumo-carriño .desconto {
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.resumo-carriño .desconto.aplicado {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .contedor-principal {
+        flex-direction: column;
+        margin: 10px;
+    }
+}
